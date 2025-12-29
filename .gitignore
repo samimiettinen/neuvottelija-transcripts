@@ -1,0 +1,9 @@
+transcript_config.json
+*.srt
+*.mp3
+*.wav
+.env
+__pycache__/
+*.pyc
+output/
+audio/
