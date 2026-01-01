@@ -24,8 +24,14 @@ pip install openai yt-dlp
 ```
 
 3. Konfiguroi API-avain:
-   - Kopioi `transcript_config.json` ja lisää oma OpenAI API-avaimesi
-   - TAI aseta ympäristömuuttuja: `OPENAI_API_KEY`
+   - Kopioi `transcript_config.example.json` → `transcript_config.json`
+   ```bash
+   copy transcript_config.example.json transcript_config.json
+   ```
+   - Muokkaa `transcript_config.json` ja lisää oma OpenAI API-avaimesi
+   - **VAIHTOEHTO:** Aseta ympäristömuuttuja `OPENAI_API_KEY`
+   
+   **TÄRKEÄÄ:** `transcript_config.json` on `.gitignore`-tiedostossa, joten API-avaimesi pysyy turvassa!
 
 ## Käyttö
 

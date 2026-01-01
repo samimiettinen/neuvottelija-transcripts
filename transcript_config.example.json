@@ -1,5 +1,5 @@
 {
-    "youtube_url": "https://youtu.be/jC0pwiEhuYI",
+    "youtube_url": "https://youtu.be/VIDEO_ID_HERE",
     "output_basename": "transcript_output",
     "model": "whisper-1",
     "language": "fi",
