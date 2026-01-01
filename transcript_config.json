@@ -1,0 +1,7 @@
+{
+    "youtube_url": "https://youtu.be/jC0pwiEhuYI",
+    "output_basename": "transcript_output",
+    "model": "whisper-1",
+    "language": "fi",
+    "openai_api_key": "YOUR_OPENAI_API_KEY_HERE"
+}
