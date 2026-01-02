@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuvottelija Transcripts - Kirjaudu sisään</title>
+    <meta name="description"
+        content="Kirjaudu sisään Neuvottelija Transcripts -palveluun ja luo transkriptioita YouTube-videoista.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="auth-wrapper">
+            <!-- Left Side: Branding -->
+            <div class="branding-section">
+                <div class="branding-content">
+                    <div class="logo-container">
+                        <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" stroke="url(#gradient1)" stroke-width="3" />
+                            <path d="M30 50 L45 35 L60 50 L75 35" stroke="url(#gradient2)" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="30" cy="50" r="3" fill="url(#gradient2)" />
+                            <circle cx="45" cy="35" r="3" fill="url(#gradient2)" />
+                            <circle cx="60" cy="50" r="3" fill="url(#gradient2)" />
+                            <circle cx="75" cy="35" r="3" fill="url(#gradient2)" />
+                            <defs>
+                                <linearGradient id="gradient1" x1="0" y1="0" x2="100" y2="100">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient2" x1="0" y1="0" x2="100" y2="0">
+                                    <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h1 class="branding-title">Neuvottelija<br>Transcripts</h1>
+                    <p class="branding-subtitle">Luo tarkkoja transkriptioita YouTube-videoista OpenAI Whisperin avulla
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Automaattinen transkriptio</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Nopea käsittely</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Turvallinen ja luotettava</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Auth Forms -->
+            <div class="auth-section">
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form active">
+                    <div class="form-header">
+                        <h2 class="form-title">Tervetuloa takaisin</h2>
+                        <p class="form-subtitle">Kirjaudu sisään jatkaaksesi transkriptiointia</p>
+                    </div>
+
+                    <form id="login-form" class="form">
+                        <div class="form-group">
+                            <label for="login-email" class="form-label">Sähköposti</label>
+                            <input type="email" id="login-email" class="form-input" placeholder="nimi@esimerkki.fi"
+                                required autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password" class="form-label">Salasana</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="login-password" class="form-input" placeholder="••••••••"
+                                    required autocomplete="current-password">
+                                <button type="button" class="password-toggle" id="toggle-login-password"
+                                    aria-label="Näytä salasana">
+                                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="login-btn">
+                                <span class="btn-text">Kirjaudu sisään</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <svg class="spinner" viewBox="0 0 24 24">
+                                        <circle class="spinner-path" cx="12" cy="12" r="10" stroke="currentColor"
+                                            stroke-width="3" fill="none" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div id="login-error" class="error-message" style="display: none;"></div>
+                    </form>
+
+                    <div class="form-footer">
+                        <p class="footer-text">
+                            Eikö sinulla ole tiliä?
+                            <button type="button" class="link-btn" id="showSignup">Rekisteröidy</button>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" class="auth-form">
+                    <div class="form-header">
+                        <h2 class="form-title">Luo tili</h2>
+                        <p class="form-subtitle">Aloita transkriptointi muutamassa sekunnissa</p>
+                    </div>
+
+                    <form id="signup-form" class="form">
+                        <div class="form-group">
+                            <label for="signup-email" class="form-label">Sähköposti</label>
+                            <input type="email" id="signup-email" class="form-input" placeholder="nimi@esimerkki.fi"
+                                required autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password" class="form-label">Salasana</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="signup-password" class="form-input"
+                                    placeholder="Vähintään 6 merkkiä" required autocomplete="new-password">
+                                <button type="button" class="password-toggle" id="toggle-signup-password"
+                                    aria-label="Näytä salasana">
+                                    <svg class="eye-icon" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="input-hint">Salasanan tulee olla vähintään 6 merkkiä pitkä</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="signup-btn">
+                                <span class="btn-text">Rekisteröidy</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <svg class="spinner" viewBox="0 0 24 24">
+                                        <circle class="spinner-path" cx="12" cy="12" r="10" stroke="currentColor"
+                                            stroke-width="3" fill="none" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div id="signup-error" class="error-message" style="display: none;"></div>
+                    </form>
+
+                    <div class="form-footer">
+                        <p class="footer-text">
+                            Onko sinulla jo tili?
+                            <button type="button" class="link-btn" id="showLogin">Kirjaudu sisään</button>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dashboard (shown after login) -->
+                <div id="dashboard" class="dashboard" style="display: none;">
+                    <div class="dashboard-header">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="user-name">Kirjautunut sisään</h3>
+                                <p class="user-email" id="user-email"></p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary" id="logout-btn">Kirjaudu ulos</button>
+                    </div>
+
+                    <div class="dashboard-content">
+                        <h2 class="section-title">Luo transkriptio</h2>
+                        <p class="section-subtitle">Anna YouTube-videon URL ja luo transkriptio</p>
+
+                        <form id="transcript-form" class="form">
+                            <div class="form-group">
+                                <label for="youtube-url" class="form-label">YouTube URL</label>
+                                <input type="url" id="youtube-url" class="form-input"
+                                    placeholder="https://youtu.be/VIDEO_ID" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="output-basename" class="form-label">Tiedostonimi (ilman päätettä)</label>
+                                <input type="text" id="output-basename" class="form-input"
+                                    placeholder="transcript_output" value="transcript_output">
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="transcript-btn">
+                                    <span class="btn-text">Luo transkriptio</span>
+                                    <span class="btn-loader" style="display: none;">
+                                        <svg class="spinner" viewBox="0 0 24 24">
+                                            <circle class="spinner-path" cx="12" cy="12" r="10" stroke="currentColor"
+                                                stroke-width="3" fill="none" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div id="transcript-result" class="success-message" style="display: none;"></div>
+                            <div id="transcript-error" class="error-message" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

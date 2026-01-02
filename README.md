@@ -8,6 +8,7 @@ Työkalu YouTube-videoiden transkriptioiden luomiseen OpenAI Whisperin avulla.
 - Automaattinen transkriptio OpenAI Whisper API:lla
 - Tuki SBV-formaatille (YouTube-tekstityksille)
 - Graafinen käyttöliittymä (GUI)
+- **UUSI:** Web-käyttöliittymä Firebase Auth -tunnistautumisella
 - Korjaa automaattisesti Whisperin aikaleimaongelmat
 
 ## Asennus
@@ -33,14 +34,31 @@ pip install openai yt-dlp
    
    **TÄRKEÄÄ:** `transcript_config.json` on `.gitignore`-tiedostossa, joten API-avaimesi pysyy turvassa!
 
+4. Konfiguroi Firebase (Web UI:ta varten):
+   - Kopioi `firebase_config.example.json` → `firebase_config.json`
+   ```bash
+   copy firebase_config.example.json firebase_config.json
+   ```
+   - Muokkaa `firebase_config.json` ja lisää Firebase-projektisi tiedot
+   - Tämä vaaditaan vain, jos käytät Web-käyttöliittymää kirjautumiseen
+
 ## Käyttö
 
 ### Graafinen käyttöliittymä
 
-Käynnistä GUI:
+Käynnistä Python GUI:
 ```bash
 python -m src.transcript_gui
 ```
+
+### Web-käyttöliittymä (Firebase Auth)
+
+Tämä käyttöliittymä mahdollistaa kirjautumisen ja pilvifunktion kutsumisen:
+
+```bash
+python serve_ui.py
+```
+Tämä käynnistää paikallisen palvelimen osoitteessa `http://localhost:8000`.
 
 ### Komentorivi
 

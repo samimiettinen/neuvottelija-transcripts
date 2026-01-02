@@ -37,6 +37,7 @@ neuvottelija-transcripts/
 
 # Config files with API keys (use transcript_config.example.json as template)
 transcript_config.json
+public/firebase_config.json
 
 # API Keys (be safe)
 .env
